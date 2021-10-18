@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>dimas.119140140_mg3</title>
+</head>
+<body>
+    <div class="tema">
+        <label>Pilih Warna Tema</label>
+        <select onchange="pilihThm(value)">
+                <option value="light">Terang suci</option>
+                <option value="dark">gelep bingitz</option>
+        </select>
+    </div>
+    <h2 class="tema">Selamat datang di Web Pulau Karate</h2>
+    <div class="tema">
+        <label>Info Karakter</label>
+        <select onchange="pilihchr(value)">
+            <option value="kungpao">Kung Pao</option>
+            <option value="jamal">Master Jamal</option>
+            <option value="roy">Roy Masterio</option>
+        </select>
+    </div>
+    <p class="tema" id="chr">"Kung Pao merupakan sodara dari liu GANZ,sempat bekerja di barbershop sebagai tukang ledeng,namun mendalami karir di dunia tarik suara dan kini menjadi petarung profesional.</p>
+	<div class="tema">
+        <h3>Mencari Faktorial</h3>
+		<label>Input Angka : </label>
+		<input type="number" name="" id="input">
+		<button onclick="nilfaktorial()">Cek nilai Faktorial</button>
+		<p id="faktorial"></p>
+    </div>
+    <script type="text/javascript">
+		function pilihThm(value) {
+			var tema = document.getElementsByClassName("tema")
+
+			if (value == "light") {
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='black'
+				}
+				document.body.style.background = 'white'
+			} else{
+				for (let i = 0; i < tema.length; i++) {
+					tema[i].style.color='white'
+				}
+				document.body.style.background = 'black'
+			}
+		}
+
+        function pilihchr(value) {
+			var merk = document.getElementById("chr")
+			if (value == "kungpao") {
+				merk.innerHTML = "Kung Pao merupakan sodara dari liu GANZ,sempat bekerja di barbershop sebagai tukang ledeng,namun mendalami karir di dunia tarik suara dan kini menjadi petarung profesional."
+			}else if (value == "jamal") {
+				merk.innerHTML = "Jamal merupakan adik dari jamil lau,mantan joki tong setan yang kini sudah pensiun,Jamal mendalami ilmu bela diri katak dalam jerami,Jamal dikenal petarung yang beringas,sekali pukul dapat merontokan gigi lawannya."
+			}else {
+				merk.innerHTML = "Roy Masterio merupakan pegulat tidak profesional yang berasal dari tanah mexico,Roy mendalami ilmu sihir dan bela diri goib,Roy memiliki julukan 'si angin duduk'."
+			}
+		}
+
+        function nilfaktorial() {
+		    var input = document.getElementById("input").value
+		    var hasil = input
+		    console.log(input)
+
+		    for (let i = hasil - 1; i > 0; i--) {
+		        hasil *= i
+		    }
+
+		    var nilfaktorial = document.getElementById("faktorial")
+		    faktorial.innerHTML = `Faktorial dari ${input} adalah ${hasil}`
+		}
+	</script>
+</body>
+</html>
