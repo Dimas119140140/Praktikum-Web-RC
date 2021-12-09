@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Jaya Abadi (119140140)</title>
+    
+    <style>
+        h1{
+            color:  #F2C4CE;
+            font-weight: bold;
+        }
+        body{
+            background-color: rgb(83, 80, 79);
+            color: floralwhite;
+            font-weight: bold;
+        }
+        button{
+            margin-top: 20px;
+            padding: 20px 30px;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            background-color: dimgray;
+            font-weight: bold;
+            color: floralwhite;
+        }
+        fieldset{
+            background-color: #F58F7C;
+        }
+
+        legend{
+            color: dimgray;
+            font-size: 35px;
+            text-align: center;
+            font-weight: bold;      
+        }
+
+    </style>
+    
+</head>
+
+<body>
+    <div id="head">
+            <h1>Silahkan Berbelanja di Toko Jaya Abadi</h1>
+            Jenis-jenis buah yang kami sediakan :<br>
+            1.Buah Mangga,IDR Rp 15000/kg <br>
+            2.Buah Jambu,IDR Rp 13000/kg <br>
+            3.Buah Salah,IDR Rp 10000/kg <br>
+           <br><br>
+    </div>
+    <fieldset>
+    <form action="hasil.php" method="POST">
+        <fieldset>
+            <legend>Daftar Belanja</legend>
+            <table>
+
+                <tr>
+                    <td>Mangga  </td>
+                    <td><input type="number" id="mangga" name="mangga" onchange="setValue()" placeholder="Berat belanjaan"> kg</td>
+                </tr>
+                <tr>
+                    <td>Jambu  </td>
+                    <td><input type="number" id="jambu" name="jambu" onchange="setValue()" placeholder="Berat belanjaan"> kg</td>
+                </tr>
+                <tr>
+                    <td>Salak </td>
+                    <td><input type="number" id="salak" name="salak" onchange="setValue()" placeholder="Berat belanjaan"> kg</td>
+                </tr>
+                <tr>
+                    <td>Total Belanja</td>
+                    <td><input type="number" id="totalB" name="totalB" readonly></td>
+                </tr>
+            </table>
+
+            <button type="submit">Cek Hasil Belanja</button>
+           </fieldset>
+    </form>
+    </fieldset>
+
+    <script>
+        function setValue(){
+            var mangga = document.getElementById("mangga").value * 15000;
+            var jambu = document.getElementById("jambu").value * 13000;
+            var salak = document.getElementById("salak").value * 10000;
+            var hasil = mangga + salak + jambu;
+            var total = document.getElementById("totalB");
+            total.value = hasil;
+        }
+    </script>
+</body>
+</html>
